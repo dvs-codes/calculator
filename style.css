@@ -1,0 +1,36 @@
+body {
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: rgb(53, 86, 106);
+    height: 500px;
+    width: 350px;
+    margin-top:125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title {
+    background-color: rgb(93, 152, 189);
+    height: 50px;
+    width: 250px;
+}
+
+.display {
+    background-color: rgb(255, 255, 255);
+    height: 50px;
+    width: 300px;
+}
+
+#button-box {
+    height: 250px;
+    width: 300px;
+    background-color: aliceblue;
+    display: flex;
+}
