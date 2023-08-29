@@ -43,7 +43,6 @@ body {
 #button-box {
     height: 250px;
     width: 300px;
-    background-color: aliceblue;
     display: flex;
     flex-wrap: wrap;
     border-radius: 5px 5px;
@@ -58,19 +57,13 @@ body {
     height: 50px;
 }
 
-.decimal{
-    margin-top: -50px;
+.zero{
+     width: 150px;
+}
+
+
+.AC {
     width: 150px;
-}
-
-.zero {
-    margin-top: -50px;
-    
-
-}
-
-.eql {
-    height: 100px;
 }
 .footer {
     display: flex;
