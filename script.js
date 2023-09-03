@@ -32,70 +32,80 @@ digits.forEach((digit) => {
 })
 })
 
-deleteButton.addEventListener('click', () => {
+function deleteNumber () {
     display.innerText = display.innerText.slice(0,-1);
     firstNumber = display.innerText
-})
+}
 
-clearButton.addEventListener('click', () => {
+function clearScreen () {
     display.innerText = "";
     firstNumber = "";
     secondNumber = "";
     operator ="";
-})
+}
 
-additionButton.addEventListener('click', () => {
+function addition() {
     if (!operator) {
         display.innerText += additionButton.innerText;
         operator = "+";
-    } 
     }
-)
-
-subtractButton.addEventListener('click', () => {
-    if (!operator) {display.innerText += subtractButton.innerText;
-    operator = "-"}
-})
-
-multiplyButton.addEventListener('click', () => {
-    if (!operator) {display.innerText += multiplyButton.innerText;
-    operator = "x"}
-})
-
-divisionButton.addEventListener('click', () => {
-    if (!operator) {display.innerText += divisionButton.innerText;
-    operator = "÷"}
-})
-
-equalButton.addEventListener('click', () => {
-    
-switch(operator) {
-    case "+":
-        display.innerText = parseInt(firstNumber) + parseInt(secondNumber);
-        firstNumber = display.innerText;
-        secondNumber = "";
-        operator ="";
-        break;
-    case "-":
-        display.innerText = parseInt(firstNumber) - parseInt(secondNumber);
-        firstNumber = display.innerText;
-        secondNumber = "";
-        operator ="";
-        break;
-    case "x":
-        display.innerText = parseInt(firstNumber) * parseInt(secondNumber);
-        firstNumber = display.innerText;
-        secondNumber = "";
-        operator ="";
-        break;
-    case "÷":
-        display.innerText = parseInt(firstNumber) / parseInt(secondNumber);
-        firstNumber = display.innerText;
-        secondNumber = "";
-        operator ="";
-        break;
 }
-})
+
+function subtraction() {
+    if (!operator) {
+    display.innerText += subtractButton.innerText;
+    operator = "-";
+    }
+}
+
+function multiplier() {
+    if (!operator) {display.innerText += multiplyButton.innerText;
+    operator = "x"
+    }
+}
+
+function divider() {
+    if (!operator) {display.innerText += divisionButton.innerText;
+    operator = "÷"
+    }
+}
+
+function operate() {
+    switch(operator) {
+        case "+":
+            display.innerText = parseInt(firstNumber) + parseInt(secondNumber);
+            firstNumber = display.innerText;
+            secondNumber = "";
+            operator ="";
+            break;
+        case "-":
+            display.innerText = parseInt(firstNumber) - parseInt(secondNumber);
+            firstNumber = display.innerText;
+            secondNumber = "";
+            operator ="";
+            break;
+        case "x":
+            display.innerText = parseInt(firstNumber) * parseInt(secondNumber);
+            firstNumber = display.innerText;
+            secondNumber = "";
+            operator ="";
+            break;
+        case "÷":
+            display.innerText = parseInt(firstNumber) / parseInt(secondNumber);
+            firstNumber = display.innerText;
+            secondNumber = "";
+            operator ="";
+            break;
+    }
+}
+
+deleteButton.addEventListener('click', deleteNumber)
+clearButton.addEventListener('click', clearScreen)
+additionButton.addEventListener('click', addition)
+subtractButton.addEventListener('click', subtraction)
+multiplyButton.addEventListener('click', multiplier)
+divisionButton.addEventListener('click', divider)
+equalButton.addEventListener('click', operate)
 
 
 
