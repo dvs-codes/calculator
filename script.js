@@ -1,4 +1,4 @@
-let digits = document.querySelectorAll('.digits')
+const digits = document.querySelectorAll('.digits')
 const display = document.querySelector('.display')
 const additionButton = document.querySelector('.addition')
 const subtractButton = document.querySelector('.subtraction')
@@ -15,7 +15,7 @@ let operator ="";
 
 
 digits.forEach((digit) => {
-    digit.addEventListener('click', () => {
+    digit.addEventListener('click',() => {
     display.innerText += digit.innerText
     //if operator is not present than digit should be firstNumber, else it should be secondNumber
     if (!operator) {
@@ -28,6 +28,10 @@ digits.forEach((digit) => {
     }
     console.log(firstNumber)
     console.log(secondNumber)
+    console.log(operator)
+    if (display.innerText === "9099950451") {
+        alert("Suraj weds Avani")
+    }
 
 })
 })
@@ -71,6 +75,7 @@ function divider() {
 }
 
 function operate() {
+    if (firstNumber && secondNumber && operator) {
     switch(operator) {
         case "+":
             display.innerText = parseInt(firstNumber) + parseInt(secondNumber);
@@ -91,12 +96,19 @@ function operate() {
             operator ="";
             break;
         case "÷":
-            display.innerText = parseInt(firstNumber) / parseInt(secondNumber);
-            firstNumber = display.innerText;
-            secondNumber = "";
-            operator ="";
-            break;
-    }
+            if(secondNumber!=="0") {
+                display.innerText = parseInt(firstNumber) / parseInt(secondNumber);
+                firstNumber = display.innerText;
+                secondNumber = "";
+                operator ="";   
+            } else {
+                alert("Mate thats not possible")
+                display.innerText = "";
+                firstNumber = "";
+                secondNumber = "";
+                operator ="";
+            }
+    }}
 }
 
 deleteButton.addEventListener('click', deleteNumber)
