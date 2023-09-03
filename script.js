@@ -23,6 +23,9 @@ digits.forEach((digit) => {
     } else {
         secondNumber += digit.innerText
     }
+    if (display.innerText.length > 13) {
+        
+    }
     console.log(firstNumber)
     console.log(secondNumber)
 
@@ -62,11 +65,25 @@ divisionButton.addEventListener('click', () => {
 })
 
 equalButton.addEventListener('click', () => {
-    if (operator === "+") {
-        display.innerText = parseInt(firstNumber) + parseInt(secondNumber);
-        firstNumber = display.innerText;
-        secondNumber = "";
-        operator ="";
+    // if (operator === "+") {
+        // display.innerText = parseInt(firstNumber) + parseInt(secondNumber);
+        // firstNumber = display.innerText;
+        // secondNumber = "";
+        // operator ="";
+    // }
+    switch(operator) {
+        case "+":
+            display.innerText = parseInt(firstNumber) + parseInt(secondNumber);
+            firstNumber = display.innerText;
+            secondNumber = "";
+            operator ="";
+            break;
+        case "-":
+            display.innerText = parseInt(firstNumber) - parseInt(secondNumber);
+            firstNumber = display.innerText;
+            secondNumber = "";
+            operator ="";
+            break;
     }
 })
 

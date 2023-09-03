@@ -38,6 +38,10 @@ body {
     border-radius: 5px 5px;
     box-shadow: 1px 1px 10px rgb(172, 187, 193);
     border: 1px solid black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    text-align: right;
+    text-align: end; 
 }
 
 #button-box {
