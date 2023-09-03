@@ -45,58 +45,56 @@ clearButton.addEventListener('click', () => {
 })
 
 additionButton.addEventListener('click', () => {
-    display.innerText += additionButton.innerText;
-    operator = "+"
-})
+    if (!operator) {
+        display.innerText += additionButton.innerText;
+        operator = "+";
+    } 
+    }
+)
 
 subtractButton.addEventListener('click', () => {
-    display.innerText += subtractButton.innerText;
-    operator = "-"
+    if (!operator) {display.innerText += subtractButton.innerText;
+    operator = "-"}
 })
 
 multiplyButton.addEventListener('click', () => {
-    display.innerText += multiplyButton.innerText;
-    operator = "x"
+    if (!operator) {display.innerText += multiplyButton.innerText;
+    operator = "x"}
 })
 
 divisionButton.addEventListener('click', () => {
-    display.innerText += divisionButton.innerText;
-    operator = "÷"
+    if (!operator) {display.innerText += divisionButton.innerText;
+    operator = "÷"}
 })
 
 equalButton.addEventListener('click', () => {
-    // if (operator === "+") {
-        // display.innerText = parseInt(firstNumber) + parseInt(secondNumber);
-        // firstNumber = display.innerText;
-        // secondNumber = "";
-        // operator ="";
-    // }
-    switch(operator) {
-        case "+":
-            display.innerText = parseInt(firstNumber) + parseInt(secondNumber);
-            firstNumber = display.innerText;
-            secondNumber = "";
-            operator ="";
-            break;
-        case "-":
-            display.innerText = parseInt(firstNumber) - parseInt(secondNumber);
-            firstNumber = display.innerText;
-            secondNumber = "";
-            operator ="";
-            break;
-        case "x":
-            display.innerText = parseInt(firstNumber) * parseInt(secondNumber);
-            firstNumber = display.innerText;
-            secondNumber = "";
-            operator ="";
-            break;
-        case "÷":
-            display.innerText = parseInt(firstNumber) / parseInt(secondNumber);
-            firstNumber = display.innerText;
-            secondNumber = "";
-            operator ="";
-            break;
-    }
+    
+switch(operator) {
+    case "+":
+        display.innerText = parseInt(firstNumber) + parseInt(secondNumber);
+        firstNumber = display.innerText;
+        secondNumber = "";
+        operator ="";
+        break;
+    case "-":
+        display.innerText = parseInt(firstNumber) - parseInt(secondNumber);
+        firstNumber = display.innerText;
+        secondNumber = "";
+        operator ="";
+        break;
+    case "x":
+        display.innerText = parseInt(firstNumber) * parseInt(secondNumber);
+        firstNumber = display.innerText;
+        secondNumber = "";
+        operator ="";
+        break;
+    case "÷":
+        display.innerText = parseInt(firstNumber) / parseInt(secondNumber);
+        firstNumber = display.innerText;
+        secondNumber = "";
+        operator ="";
+        break;
+}
 })
 
 
