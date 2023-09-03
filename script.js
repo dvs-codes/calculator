@@ -84,6 +84,18 @@ equalButton.addEventListener('click', () => {
             secondNumber = "";
             operator ="";
             break;
+        case "x":
+            display.innerText = parseInt(firstNumber) * parseInt(secondNumber);
+            firstNumber = display.innerText;
+            secondNumber = "";
+            operator ="";
+            break;
+        case "÷":
+            display.innerText = parseInt(firstNumber) / parseInt(secondNumber);
+            firstNumber = display.innerText;
+            secondNumber = "";
+            operator ="";
+            break;
     }
 })
 
