@@ -6,11 +6,13 @@ const multiplyButton = document.querySelector('.multiplier')
 const divisionButton = document.querySelector('.divider')
 const equalButton = document.querySelector('.eql')
 const clearButton = document.querySelector('.clear')
+const deleteButton = document.querySelector('.delete')
 display.innerText = "";
 
 let firstNumber = "";
 let secondNumber = "";
 let operator ="";
+
 
 digits.forEach((digit) => {
     digit.addEventListener('click', () => {
@@ -27,7 +29,10 @@ digits.forEach((digit) => {
 })
 })
 
-
+deleteButton.addEventListener('click', () => {
+    display.innerText = display.innerText.slice(0,-1);
+    firstNumber = display.innerText
+})
 
 clearButton.addEventListener('click', () => {
     display.innerText = "";
