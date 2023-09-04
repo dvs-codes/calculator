@@ -13,7 +13,6 @@ let firstNumber = "";
 let secondNumber = "";
 let operator ="";
 
-
 digits.forEach((digit) => {
     digit.addEventListener('click',() => {
     display.innerText += digit.innerText
@@ -112,6 +111,7 @@ function operate() {
 }
 
 deleteButton.addEventListener('click', deleteNumber)
+deleteButton.addEventListener('keydown', deleteNumber)
 clearButton.addEventListener('click', clearScreen)
 additionButton.addEventListener('click', addition)
 subtractButton.addEventListener('click', subtraction)
