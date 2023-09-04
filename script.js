@@ -48,27 +48,27 @@ function clearScreen () {
 }
 
 function addition() {
-    if (!operator) {
+    if (!operator && firstNumber) {
         display.innerText += additionButton.innerText;
         operator = "+";
     }
 }
 
 function subtraction() {
-    if (!operator) {
+    if (!operator && firstNumber) {
     display.innerText += subtractButton.innerText;
     operator = "-";
     }
 }
 
 function multiplier() {
-    if (!operator) {display.innerText += multiplyButton.innerText;
+    if (!operator && firstNumber) {display.innerText += multiplyButton.innerText;
     operator = "x"
     }
 }
 
 function divider() {
-    if (!operator) {display.innerText += divisionButton.innerText;
+    if (!operator && firstNumber) {display.innerText += divisionButton.innerText;
     operator = "÷"
     }
 }
@@ -111,7 +111,7 @@ function operate() {
 }
 
 deleteButton.addEventListener('click', deleteNumber)
-deleteButton.addEventListener('keydown', deleteNumber)
+
 clearButton.addEventListener('click', clearScreen)
 additionButton.addEventListener('click', addition)
 subtractButton.addEventListener('click', subtraction)
@@ -119,7 +119,19 @@ multiplyButton.addEventListener('click', multiplier)
 divisionButton.addEventListener('click', divider)
 equalButton.addEventListener('click', operate)
 
+window.addEventListener("keydown", (event) => {
+    console.log(event.key==="+")
+    if (event.key==="+") {
+        addition
+    }
 
+    // switch(event.key){
+    //     case "+":
+    //         addition
+    //         break;
+    // }
+
+})
 
 
 
