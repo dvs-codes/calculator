@@ -39,9 +39,8 @@ body {
     box-shadow: 1px 1px 10px rgb(172, 187, 193);
     border: 1px solid black;
     font-family: 'Roboto', sans-serif;
-    font-size: 40px;
+    font-size: 60px;
     text-align: right;
-    padding-bottom: 0px; 
 }
 
 #button-box {

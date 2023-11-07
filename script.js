@@ -14,6 +14,7 @@ let secondNumber = "";
 let operator ="";
 
 digits.forEach((digit) => {
+    
     digit.addEventListener('click',() => {
     display.innerText += digit.innerText
     //if operator is not present than digit should be firstNumber, else it should be secondNumber
@@ -22,12 +23,12 @@ digits.forEach((digit) => {
     } else {
         secondNumber += digit.innerText
     }
-    if (display.innerText.length > 13) {
-        
-    }
-    console.log(firstNumber)
-    console.log(secondNumber)
-    console.log(operator)
+
+
+
+    console.log(`f:${firstNumber}`)
+    console.log(`S:${secondNumber}`)
+    console.log(`o:${operator}`)
     if (display.innerText === "9099950451") {
         alert("Suraj weds Avani")
     }
@@ -111,7 +112,6 @@ function operate() {
 }
 
 deleteButton.addEventListener('click', deleteNumber)
-
 clearButton.addEventListener('click', clearScreen)
 additionButton.addEventListener('click', addition)
 subtractButton.addEventListener('click', subtraction)
@@ -120,17 +120,39 @@ divisionButton.addEventListener('click', divider)
 equalButton.addEventListener('click', operate)
 
 window.addEventListener("keydown", (event) => {
-    console.log(event.key==="+")
-    if (event.key==="+") {
-        addition
+    console.log(`K:${event.key}`)
+    switch(event.key){
+        case "+":
+            addition()
+            break;
+        case "-":
+            subtraction()
+            break;
+        case "/":
+            divider()
+            break;
+        case "*":
+            multiplier()
+            break;
+        case "Backspace":
+            deleteNumber() 
+            break;
+        case "Enter":
+            operate()
+            break;
+        case "9":
+            if (!firstNumber) {
+            firstNumber=9
+            display.innerText=9}
+            else {
+                secondNumber=9
+            }
     }
 
-    // switch(event.key){
-    //     case "+":
-    //         addition
-    //         break;
-    // }
 
+    console.log(`f:${firstNumber}`)
+    console.log(`S:${secondNumber}`)
+    console.log(`o:${operator}`)
 })
 
 
