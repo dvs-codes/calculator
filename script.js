@@ -16,13 +16,17 @@ let operator ="";
 digits.forEach((digit) => {
     
     digit.addEventListener('click',() => {
-    display.innerText += digit.innerText
+
+    if (display.innerText.length<9)
+    ///this code limits the numbers that can be enterd in the calculator display
+    {display.innerText += digit.innerText
     //if operator is not present than digit should be firstNumber, else it should be secondNumber
+    
     if (!operator) {
         firstNumber += digit.innerText
     } else {
         secondNumber += digit.innerText
-    }
+    }}
 
 
 
@@ -63,13 +67,15 @@ function subtraction() {
 }
 
 function multiplier() {
-    if (!operator && firstNumber) {display.innerText += multiplyButton.innerText;
+    if (!operator && firstNumber) {
+    display.innerText += multiplyButton.innerText;
     operator = "x"
     }
 }
 
 function divider() {
-    if (!operator && firstNumber) {display.innerText += divisionButton.innerText;
+    if (!operator && firstNumber) {
+    display.innerText += divisionButton.innerText;
     operator = "÷"
     }
 }
@@ -122,31 +128,28 @@ equalButton.addEventListener('click', operate)
 window.addEventListener("keydown", (event) => {
     console.log(`K:${event.key}`)
     switch(event.key){
+
+        case "Backspace":
+            deleteNumber() 
+            break;
+        case "Escape":
+            clearScreen()
+            break; 
         case "+":
             addition()
             break;
         case "-":
             subtraction()
             break;
-        case "/":
-            divider()
-            break;
         case "*":
             multiplier()
             break;
-        case "Backspace":
-            deleteNumber() 
+        case "/":
+            divider()
             break;
         case "Enter":
             operate()
             break;
-        case "9":
-            if (!firstNumber) {
-            firstNumber=9
-            display.innerText=9}
-            else {
-                secondNumber=9
-            }
     }
 
 
