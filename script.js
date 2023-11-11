@@ -16,23 +16,19 @@ let operator ="";
 digits.forEach((digit) => {
     
     digit.addEventListener('click',() => {
-
-    if (display.innerText.length<9)
-    ///this code limits the numbers that can be enterd in the calculator display
-    {display.innerText += digit.innerText
+    display.innerText += digit.innerText
     //if operator is not present than digit should be firstNumber, else it should be secondNumber
-    
     if (!operator) {
         firstNumber += digit.innerText
     } else {
         secondNumber += digit.innerText
-    }}
+    }
 
 
 
-    console.log(`f:${firstNumber}`)
-    console.log(`S:${secondNumber}`)
-    console.log(`o:${operator}`)
+    console.log(`fi:${firstNumber}`)
+    console.log(`Se:${secondNumber}`)
+    console.log(`op:${operator}`)
     if (display.innerText === "9099950451") {
         alert("Suraj weds Avani")
     }
@@ -67,15 +63,13 @@ function subtraction() {
 }
 
 function multiplier() {
-    if (!operator && firstNumber) {
-    display.innerText += multiplyButton.innerText;
+    if (!operator && firstNumber) {display.innerText += multiplyButton.innerText;
     operator = "x"
     }
 }
 
 function divider() {
-    if (!operator && firstNumber) {
-    display.innerText += divisionButton.innerText;
+    if (!operator && firstNumber) {display.innerText += divisionButton.innerText;
     operator = "÷"
     }
 }
@@ -128,28 +122,31 @@ equalButton.addEventListener('click', operate)
 window.addEventListener("keydown", (event) => {
     console.log(`K:${event.key}`)
     switch(event.key){
-
-        case "Backspace":
-            deleteNumber() 
-            break;
-        case "Escape":
-            clearScreen()
-            break; 
         case "+":
             addition()
             break;
         case "-":
             subtraction()
             break;
+        case "/":
+            divider()
+            break;
         case "*":
             multiplier()
             break;
-        case "/":
-            divider()
+        case "Backspace":
+            deleteNumber() 
             break;
         case "Enter":
             operate()
             break;
+        case "9":
+            if (!firstNumber) {
+            firstNumber=9
+            display.innerText=9}
+            else {
+                secondNumber=9
+            }
     }
 
 
@@ -157,7 +154,3 @@ window.addEventListener("keydown", (event) => {
     console.log(`S:${secondNumber}`)
     console.log(`o:${operator}`)
 })
-
-
-
-
