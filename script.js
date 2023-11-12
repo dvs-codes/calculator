@@ -13,6 +13,8 @@ let firstNumber = "";
 let secondNumber = "";
 let operator ="";
 
+
+
 digits.forEach((digit) => {
     
     digit.addEventListener('click',() => {
@@ -28,17 +30,15 @@ digits.forEach((digit) => {
         secondNumber += digit.innerText
     }}
 
-
-
     console.log(`f:${firstNumber}`)
     console.log(`S:${secondNumber}`)
     console.log(`o:${operator}`)
-    if (display.innerText === "9099950451") {
-        alert("Suraj weds Avani")
-    }
+})
+
+    console.log(digit.innerText)
 
 })
-})
+
 
 function deleteNumber () {
     display.innerText = display.innerText.slice(0,-1);
@@ -127,6 +127,8 @@ equalButton.addEventListener('click', operate)
 
 window.addEventListener("keydown", (event) => {
     console.log(`K:${event.key}`)
+
+    event.preventDefault()
     switch(event.key){
 
         case "Backspace":
@@ -150,13 +152,21 @@ window.addEventListener("keydown", (event) => {
         case "Enter":
             operate()
             break;
+        }
+
+for (let i = 0; i < 10; i++) {
+    
+    if (event.key==i) {
+        display.innerText += i;
+        if (!operator) {
+            firstNumber += i;
+        } else {
+            secondNumber += i;
+        }}
     }
-
-
-    console.log(`f:${firstNumber}`)
-    console.log(`S:${secondNumber}`)
-    console.log(`o:${operator}`)
 })
+
+
 
 
 
