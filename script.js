@@ -7,6 +7,7 @@ const divisionButton = document.querySelector('.divider')
 const equalButton = document.querySelector('.eql')
 const clearButton = document.querySelector('.clear')
 const deleteButton = document.querySelector('.delete')
+const deciButton = document.querySelector('.decimal')
 display.innerText = "";
 
 let firstNumber = "";
@@ -33,9 +34,12 @@ digits.forEach((digit) => {
     console.log(`f:${firstNumber}`)
     console.log(`S:${secondNumber}`)
     console.log(`o:${operator}`)
+    
+    if (firstNumber==="123123123") {
+        alert("Suraj is a video game addict")
+    }
 })
 
-    console.log(digit.innerText)
 
 })
 
@@ -43,6 +47,13 @@ digits.forEach((digit) => {
 function deleteNumber () {
     display.innerText = display.innerText.slice(0,-1);
     firstNumber = display.innerText
+}
+
+function decimalNumber () {
+    if (firstNumber && !operator) {
+        display.innerText += deciButton.innerText;
+
+    }
 }
 
 function clearScreen () {
@@ -124,6 +135,7 @@ subtractButton.addEventListener('click', subtraction)
 multiplyButton.addEventListener('click', multiplier)
 divisionButton.addEventListener('click', divider)
 equalButton.addEventListener('click', operate)
+deciButton.addEventListener('click', decimalNumber)
 
 window.addEventListener("keydown", (event) => {
     console.log(`K:${event.key}`)
@@ -155,14 +167,14 @@ window.addEventListener("keydown", (event) => {
         }
 
 for (let i = 0; i < 10; i++) {
-    
+    if (display.innerText.length<9){
     if (event.key==i) {
         display.innerText += i;
         if (!operator) {
             firstNumber += i;
         } else {
             secondNumber += i;
-        }}
+        }}}
     }
 })
 
