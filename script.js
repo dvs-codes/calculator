@@ -50,10 +50,12 @@ function deleteNumber () {
 }
 
 function decimalNumber () {
-    if (firstNumber && !operator) {
+    let decimalCount = 0;
+    if (firstNumber && !operator && decimalCount==0) {
         display.innerText += deciButton.innerText;
-
+        decimalCount += 1;
     }
+    
 }
 
 function clearScreen () {
