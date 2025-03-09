@@ -35,7 +35,7 @@ digits.forEach((digit) => {
     console.log(`S:${secondNumber}`)
     console.log(`o:${operator}`)
     
-    if (firstNumber==="9099950451") {
+    if (firstNumber==="50451") {
         alert("Happy married life my friend ! ;)")
     }
 })
